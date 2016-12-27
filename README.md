@@ -51,6 +51,24 @@ In order to start application you need to run maven command in root folder of ap
 
 `mvn spring-boot:run`
 
+## Databases
+
+If you for some reason don't want to install MySQL and ElasticSearch on your machine, you can use supplied docker-compose configuration file.
+
+### What You Need To Install?
+
+* [Docker](https://docs.docker.com/)
+* [Doker Compose](https://docs.docker.com/compose/install/)
+
+### How To Start Containers?
+
+In order to start **MySQL** container and **ElasticSearch** container this need to be done:
+
+* Open terminal in `docker` folder of this project
+* Start docker-compose with command: `docker-compose up` or `sudo docker-compose up`
+
+Pay attention that this two containers expect **ports 3306, 9200 and 9300 to be free**.
+
 ## License
 
 elasticsearch-spring-demo is released under [MIT License](https://opensource.org/licenses/MIT).
