@@ -1,0 +1,19 @@
+version: '2'
+services:
+ es-db:
+  image: elasticsearch:1.7-alpine
+  command: "elasticsearch -Des.cluster.name=web_app_demo -Des.node.name=demo_node"
+  ports:
+    - "9200:9200"
+    - "9300:9300"
+ mysql-db:
+  image: mysql:5.7
+  restart: always
+  environment:
+    MYSQL_ROOT_PASSWORD: demo
+    MYSQL_DATABASE: es_demo
+    MYSQL_USER: demo
+    MYSQL_PASSWORD: demo
+  ports:
+    - "3306:3306"
+
