@@ -1,7 +1,7 @@
 version: '2'
 services:
  es-db:
-  image: elasticsearch:1.7-alpine
+  image: elasticsearch:2.4.3-alpine
   command: "elasticsearch -Des.cluster.name=web_app_demo -Des.node.name=demo_node"
   ports:
     - "9200:9200"
