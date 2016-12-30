@@ -31,7 +31,7 @@ public class TwitterController {
 	@RequestMapping(value = "/es", method = RequestMethod.POST)
 	public ResponseEntity<?> queryEs(@RequestBody final QueryDto query) {
 
-		final QueryBuilder esQuery = QueryBuilders.simpleQueryString(query.getQuery());
+		final QueryBuilder esQuery = QueryBuilders.simpleQueryStringQuery(query.getQuery());
 
 		final Iterable<TweetEsEntity> results = tweetEsRepository.search(esQuery);
 		return new ResponseEntity<Iterable<TweetEsEntity>>(results, HttpStatus.ACCEPTED);
